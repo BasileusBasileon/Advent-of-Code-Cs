@@ -7,7 +7,7 @@ namespace Advent_of_Code_Cs
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("What Day should be executed?\n");
+			Console.WriteLine("What Day should be executed?");
 			char day = Console.ReadKey().KeyChar;
 
 			switch (day)
