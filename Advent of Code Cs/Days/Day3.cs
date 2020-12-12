@@ -13,7 +13,7 @@ namespace Advent_of_Code_Cs.Days
 		{
 			string[] lines = ParseInput().ToArray();
 
-			Day3A(lines);
+			Day3B(lines, Day3A(lines));
 		}
 
 		private IEnumerable<string> ParseInput()
@@ -22,20 +22,41 @@ namespace Advent_of_Code_Cs.Days
 			return lines;
 		}
 
-		private void Day3A(string[] lines)
+		private int Day3A(string[] lines)
 		{
-			int x = 3;
+			int trees = CountTrees(lines, 3, 1);
+
+			Console.WriteLine($"\nThe solution to Day3A is {trees}.");
+
+			return trees;
+		}
+
+		private void Day3B(string[] lines, int treesR3D1)
+		{
+			int treesR1D1 = CountTrees(lines, 1, 1);
+			int treesR5D1 = CountTrees(lines, 5, 1);
+			int treesR7D1 = CountTrees(lines, 7, 1);
+			int treesR1D2 = CountTrees(lines, 1, 2);
+
+			Console.WriteLine($"\nThe solution to Day3B is {(long)treesR1D1 * treesR3D1 * treesR5D1 * treesR7D1 * treesR1D2}.");
+		}
+
+		private static int CountTrees(string[] lines, int right, int down)
+		{
+			Console.WriteLine($"Right: {right}, Down: {down}");
+
+			int x = right;
 			int lenght = lines[0].Length;
 			int trees = 0;
 
-			for (int y = 1; y < lines.Length; y++)
+			for (int y = down; y < lines.Length; y += down)
 			{
 				if (lines[y].ElementAt(x % lenght) == '#')
 					trees++;
-				x += 3;
+				x += right;
 			}
 
-			Console.WriteLine($"\nThe solution to Day3A is {trees}.");
+			return trees;
 		}
 	}
 }
