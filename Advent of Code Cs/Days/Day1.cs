@@ -18,7 +18,7 @@ namespace Advent_of_Code_Cs.Days
 			Day2A(numbers);
 		}
 
-		private static int[] ParseInput()
+		private int[] ParseInput()
 		{
 			IEnumerable<string> lines = File.ReadLines(@"S:\Users\Nils\source\repos\Advent of Code Cs\Advent of Code Cs\Inputs\Day1_Input.txt", Encoding.UTF8);
 			int lineAmount = lines.Count();
@@ -28,7 +28,7 @@ namespace Advent_of_Code_Cs.Days
 			return numbers;
 		}
 
-		private static void Day1A(int[] numbers)
+		private void Day1A(int[] numbers)
 		{
 			foreach (int number in numbers)
 			{
@@ -41,7 +41,7 @@ namespace Advent_of_Code_Cs.Days
 			}
 		}
 
-		private static void Day2A(int[] numbers)
+		private void Day2A(int[] numbers)
 		{
 			foreach (int number in numbers)
 			{

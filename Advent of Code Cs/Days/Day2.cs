@@ -47,7 +47,7 @@ namespace Advent_of_Code_Cs.Days
 			});
 		}
 
-		private static void Day2A(IEnumerable<Password> passwords)
+		private void Day2A(IEnumerable<Password> passwords)
 		{
 			int valids = 0;
 
@@ -61,7 +61,7 @@ namespace Advent_of_Code_Cs.Days
 			Console.WriteLine($"\nThe solution to Day2A is {valids}.");
 		}
 
-		private static void Day2B(IEnumerable<Password> passwords)
+		private void Day2B(IEnumerable<Password> passwords)
 		{
 			int valids = 0;
 
