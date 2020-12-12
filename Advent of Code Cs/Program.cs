@@ -15,8 +15,11 @@ namespace Advent_of_Code_Cs
 				case '1':
 					new Day1();
 					break;
+				case '2':
+					new Day2();
+					break;
 				default:
-					Console.WriteLine("\nThat's not a number you doofus.");
+					Console.WriteLine("\nThat's not a valid number you doofus.");
 					break;
 			}
 

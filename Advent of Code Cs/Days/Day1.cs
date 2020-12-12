@@ -11,14 +11,14 @@ namespace Advent_of_Code_Cs.Days
 	{
 		public Day1()
 		{
-			int[] numbers = ReadFile();
+			int[] numbers = ParseInput();
 
 			Day1A(numbers);
 
 			Day2A(numbers);
 		}
 
-		private static int[] ReadFile()
+		private static int[] ParseInput()
 		{
 			IEnumerable<string> lines = File.ReadLines(@"S:\Users\Nils\source\repos\Advent of Code Cs\Advent of Code Cs\Inputs\Day1_Input.txt", Encoding.UTF8);
 			int lineAmount = lines.Count();
@@ -35,7 +35,7 @@ namespace Advent_of_Code_Cs.Days
 				int other = 2020 - number;
 				if (numbers.Any(n => n == other))
 				{
-					Console.WriteLine($"\nThe solution to Day1A is {number} * {other} = {number * other}");
+					Console.WriteLine($"\nThe solution to Day1A is {number} * {other} = {number * other}.");
 					break;
 				}
 			}
@@ -52,7 +52,7 @@ namespace Advent_of_Code_Cs.Days
 						int other2 = 2020 - number - other;
 						if (numbers.Any(n => n == other2))
 						{
-							Console.WriteLine($"\nThe solution to Day1B is {number} * {other} * {other2} = {number * other * other2}");
+							Console.WriteLine($"\nThe solution to Day1B is {number} * {other} * {other2} = {number * other * other2}.");
 							return;
 						}
 					}
