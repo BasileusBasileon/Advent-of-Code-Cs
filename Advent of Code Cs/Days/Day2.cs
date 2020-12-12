@@ -15,6 +15,7 @@ namespace Advent_of_Code_Cs.Days
 			IEnumerable<string> lines = ParseInput();
 
 			Day2A(lines);
+			Day2B(lines);
 		}
 
 		private IEnumerable<string> ParseInput()
@@ -39,6 +40,28 @@ namespace Advent_of_Code_Cs.Days
 
 
 			Console.WriteLine($"\nThe solution to Day2A is {valids}.");
+		}
+
+		private static void Day2B(IEnumerable<string> lines)
+		{
+			Regex pwRegex = new Regex(@"(\d+)-(\d+) (\w): (\w+)");
+			int valids = 0;
+
+			foreach (string line in lines)
+			{
+				Match match = pwRegex.Match(line);
+
+				char checker = match.Groups[3].Value.ElementAt(0);
+				int pos1 = int.Parse(match.Groups[1].Value) - 1;
+				int pos2 = int.Parse(match.Groups[2].Value) - 1;
+
+				if(match.Groups[4].Value.ElementAt(pos1) == checker ^ match.Groups[4].Value.ElementAt(pos2) == checker)
+				{
+					valids++;
+				}
+			}
+
+			Console.WriteLine($"\nThe solution to Day2B is {valids}.");
 		}
 	}
 }
