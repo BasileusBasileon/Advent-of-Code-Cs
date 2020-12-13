@@ -21,6 +21,9 @@ namespace Advent_of_Code_Cs
 				case '3':
 					new Day3();
 					break;
+				case '4':
+					new Day4();
+					break;
 				default:
 					Console.WriteLine("\nThat's not a valid number you doofus.");
 					break;
